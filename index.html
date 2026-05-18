@@ -3,632 +3,423 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aguirre English Studio — Clases de Inglés Personalizadas</title>
+<title>Aguirre English Studio | Clases de Inglés Personalizadas</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* ===== VARIABLES Y RESET ===== */
+:root {
+  --primary: #002855;
+  --accent: #C49C2A;
+  --accent-light: #E8C96B;
+  --offer: #D94624;
+  --bg-light: #F8FAFC;
+  --white: #FFFFFF;
+  --text-main: #1E293B;
+  --text-muted: #64748B;
+  --transition: all 0.3s ease;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
 
 body {
-  background: #0f172a;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 20px 15px;
   font-family: 'Outfit', sans-serif;
-}
-
-/* ===== CONTENEDOR PRINCIPAL ===== */
-.flyer {
-  width: 100%;
-  max-width: 480px;
-  background: #FFFFFF;
-  border-radius: 16px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  position: relative;
-  overflow: hidden;
-  border: 4px solid #002855;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ===== MARQUESINA ===== */
-.ticker-wrap {
-  width: 100%;
-  overflow: hidden;
-  background: linear-gradient(90deg, #C49C2A, #E8C96B, #C49C2A);
-  padding: 6px 0;
-  border-bottom: 2px solid #002855;
-}
-
-.ticker {
-  display: inline-block;
-  white-space: nowrap;
-  padding-left: 100%;
-  animation: marquee 15s linear infinite;
-}
-
-.ticker-item {
-  display: inline-block;
-  padding: 0 2rem;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  font-weight: 700;
-  color: #002855;
-  letter-spacing: 2px;
-}
-
-@keyframes marquee {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-100%, 0, 0); }
-}
-
-.content {
-  padding: 24px 24px 30px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-/* ===== HEADER ===== */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid #F1F5F9;
-  padding-bottom: 16px;
-}
-
-.official-logo {
-  max-height: 60px;
-  width: auto;
-  object-fit: contain;
-}
-
-.badge {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  font-weight: 600;
-  color: #002855;
-  background: #E0F2FE;
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: 1px solid #BAE6FD;
-}
-
-/* ===== HERO ===== */
-.hero {
-  text-align: center;
-  padding: 4px 0;
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  font-weight: 900;
-  color: #002855;
-  line-height: 1.15;
-  margin-bottom: 12px;
-}
-
-.hero h1 span {
-  color: #C49C2A;
-  font-style: italic;
-}
-
-.hero p {
-  font-size: 14px;
-  color: #475569;
+  color: var(--text-main);
   line-height: 1.6;
+  background-color: var(--white);
 }
 
-/* ===== MICRO-BIO & STATS ===== */
-.bio-card {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  border-radius: 12px;
-  padding: 16px;
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+/* ===== NAVEGACIÓN ===== */
+header {
+  background: var(--white);
+  padding: 1rem 5%;
   display: flex;
-  flex-direction: column;
-  gap: 14px;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
 }
 
-.bio-text {
-  font-size: 12.5px;
-  color: #334155;
-  line-height: 1.5;
-}
+.logo-nav { height: 50px; }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  text-align: center;
-}
-
-.stat-item {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  padding: 10px 4px;
-  border-radius: 8px;
-}
-
-.stat-number {
-  display: block;
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  font-weight: 900;
-  color: #C49C2A;
-  margin-bottom: 2px;
-}
-
-.stat-label {
-  font-size: 10px;
-  color: #64748B;
+nav a {
+  text-decoration: none;
+  color: var(--primary);
   font-weight: 600;
-  line-height: 1.2;
+  font-size: 0.9rem;
+  margin-left: 20px;
+  transition: var(--transition);
 }
 
-/* ===== ENFOQUES ===== */
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  font-weight: 900;
-  color: #002855;
-  border-left: 4px solid #C49C2A;
-  padding-left: 8px;
-  margin-bottom: 12px;
-}
+nav a:hover { color: var(--accent); }
 
-.grid-enfoques {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.card-enfoque {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.card-enfoque .icon {
-  font-size: 16px;
-  margin-bottom: 2px;
-}
-
-.card-enfoque h3 {
-  font-size: 12.5px;
-  font-weight: 700;
-  color: #002855;
-}
-
-.card-enfoque p {
-  font-size: 11px;
-  color: #64748B;
-  line-height: 1.4;
-}
-
-/* ===== ESTILO DE LOS PLANES (PLAN INICIO RESALTADO) ===== */
-.plans {
-  display: flex;
-  flex-direction: column;
-  gap: 12px; /* Aumentado para dar aire al plan resaltado */
-}
-
-.plan {
+/* ===== HERO SECTION ===== */
+.hero {
+  padding: 80px 5%;
+  background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 14px 16px;
-  border-radius: 8px;
-  border: 1px solid #E2E8F0;
+  flex-wrap: wrap;
+  min-height: 80vh;
+}
+
+.hero-content { flex: 1; min-width: 300px; padding-right: 40px; }
+.hero-image { flex: 1; min-width: 300px; text-align: center; }
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--primary);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content h1 span { color: var(--accent); font-style: italic; }
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 20px;
+  /* Simulación de imagen/ilustracion */
+}
+
+/* ===== SECCIONES GENERALES ===== */
+section { padding: 80px 5%; }
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 3rem;
   position: relative;
-  overflow: hidden;
-  background: #FFFFFF;
 }
 
-/* --- ESTILO ESPECIAL PLAN INICIO --- */
-.plan-inicio {
-  background: #FFFDF5;
-  border: 2px solid #C49C2A;
-  box-shadow: 0 8px 20px -6px rgba(196, 156, 42, 0.3);
-  transform: scale(1.02); /* Lo hace ligeramente más grande */
-  z-index: 10;
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  margin: 15px auto 0;
 }
 
-.plan-inicio::before {
-  content: '¡SOLO POR ESTE MES!';
+/* ===== ENFOQUES GRID ===== */
+.enfoques-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.enfoque-card {
+  background: var(--bg-light);
+  padding: 30px;
+  border-radius: 15px;
+  transition: var(--transition);
+  border: 1px solid #e2e8f0;
+}
+
+.enfoque-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.enfoque-card .icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+
+/* ===== PLANES (GRID RESPONSIVO) ===== */
+.planes-bg { background-color: var(--primary); color: var(--white); }
+.planes-bg .section-title { color: var(--white); }
+
+.planes-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.plan-card {
+  background: var(--white);
+  color: var(--text-main);
+  padding: 40px 30px;
+  border-radius: 20px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+}
+
+/* --- PLAN INICIO DESTACADO --- */
+.plan-featured {
+  transform: scale(1.05);
+  border: 3px solid var(--accent);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.ribbon {
   position: absolute;
-  top: 8px; right: -25px;
-  background: #D94624; /* Rojo suave para urgencia */
-  color: #FFFFFF;
-  font-family: 'DM Mono', monospace;
-  font-size: 7px;
+  top: 15px;
+  right: 15px;
+  background: var(--offer);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 1px;
-  padding: 4px 30px;
-  transform: rotate(45deg);
 }
 
-.old-price {
-  font-size: 12px;
-  color: #94A3B8;
-  text-decoration: line-through;
+.plan-card h3 { font-size: 1.8rem; margin-bottom: 10px; color: var(--primary); }
+.plan-card .details { font-family: 'DM Mono', monospace; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; }
+
+.price-box { margin-top: auto; padding-top: 20px; border-top: 1px solid #eee; }
+
+.price-old {
   display: block;
-  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  margin-bottom: 5px;
 }
 
-.new-price {
-  color: #D94624 !important; /* Resalta el nuevo precio en el Plan Inicio */
-  font-size: 24px !important;
-}
-
-/* -------------------------------- */
-
-.plan-estandar { background: #F8FAFC; }
-.plan-intensivo { background: #F0F5FA; border-color: rgba(30,80,160,0.15); }
-
-.plan-name {
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #002855;
-  margin-bottom: 3px;
-}
-.plan-detail {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  color: #64748B;
-  letter-spacing: 0.2px;
-}
-.plan-right { text-align: right; }
-.plan-price {
+.price-now {
+  font-size: 2.8rem;
   font-family: 'Playfair Display', serif;
-  font-size: 21px;
   font-weight: 900;
-  color: #002855;
+  color: var(--primary);
   line-height: 1;
 }
-.plan-currency {
-  font-family: 'DM Mono', monospace;
-  font-size: 8.5px;
-  color: #94A3B8;
-  letter-spacing: 1px;
-  font-weight: 500;
-  margin-top: 2px;
+
+.plan-featured .price-now { color: var(--offer); }
+
+.price-currency { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--text-muted); }
+
+/* ===== TESTIMONIOS WEB ===== */
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
 }
 
-/* ===== TESTIMONIOS ===== */
-.testimonials-container {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.test-card {
+  background: var(--bg-light);
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+  border-left: 5px solid var(--accent);
 }
 
-.testimonial-card {
-  background: #F8FAFC;
-  border-left: 3px solid #C49C2A;
-  padding: 12px 14px;
-  border-radius: 0 8px 8px 0;
-}
+.test-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+.test-avatar { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; background: #ddd; }
+.test-info h4 { font-size: 1rem; color: var(--primary); }
+.test-info p { font-size: 0.8rem; color: var(--text-muted); }
 
-.testimonial-quote {
-  font-size: 12.5px;
-  color: #33414F;
-  font-style: italic;
-  line-height: 1.5;
-  margin-bottom: 6px;
-}
+.test-content { font-style: italic; font-size: 0.95rem; margin-bottom: 15px; }
+.stars { color: var(--accent); }
 
-.testimonial-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 11px;
-  color: #64748B;
-  font-weight: 600;
-}
+/* ===== WHATSAPP FLOATING / FOOTER ===== */
+.cta-section { text-align: center; background: #f1f5f9; }
 
-.stars {
-  color: #C49C2A;
-  font-size: 10px;
-}
-
-/* ===== FAQs ===== */
-.faq-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.faq-item {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.faq-item[open] {
-  background: #F0F9FF;
-  border-color: #BAE6FD;
-}
-
-.faq-question {
-  padding: 14px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #002855;
-  cursor: pointer;
-  user-select: none;
-  list-style: none;
-}
-
-.faq-question::-webkit-details-marker { display: none; }
-
-.faq-answer {
-  padding: 0 14px 14px 14px;
-  font-size: 12px;
-  color: #475569;
-  line-height: 1.5;
-}
-
-/* ===== BENEFICIOS ===== */
-.beneficios-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  background: #F8FAFC;
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px dashed #CBD5E1;
-}
-
-.beneficio-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  color: #475569;
-  font-weight: 500;
-}
-
-.beneficio-item::before {
-  content: '✓';
-  color: #C49C2A;
-  font-weight: 900;
-}
-
-/* ===== WHATSAPP ===== */
-.cta-whatsapp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  background: #002855;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 10px 15px -3px rgba(0, 40, 85, 0.3);
-  transition: transform 0.2s;
-}
-
-.cta-whatsapp:hover { transform: scale(1.02); }
-
-.cta-title {
-  color: #E8C96B;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 2px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.cta-btn-box {
+.btn-whatsapp {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   background: #25D366;
-  color: #FFFFFF;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
+  color: white;
+  padding: 18px 35px;
+  border-radius: 50px;
+  text-decoration: none;
   font-weight: 700;
-  width: 100%;
-  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+  transition: var(--transition);
 }
 
-.cta-sub {
-  color: #FFFFFF;
-  font-size: 11px;
-  opacity: 0.8;
-  margin-top: 2px;
+.btn-whatsapp:hover { transform: scale(1.05); }
+
+footer {
+  background: var(--primary);
+  color: white;
+  padding: 40px 5%;
+  text-align: center;
 }
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 11px;
-  color: #94A3B8;
-  border-top: 1px solid #F1F5F9;
-  padding-top: 12px;
+/* RESPONSIVO MÓVIL */
+@media (max-width: 768px) {
+  header { flex-direction: column; gap: 15px; }
+  nav { margin-top: 10px; }
+  nav a { margin: 0 10px; font-size: 0.8rem; }
+  .hero-content { padding-right: 0; text-align: center; margin-bottom: 40px; }
+  .plan-featured { transform: scale(1); }
 }
 
 </style>
 </head>
 <body>
 
-<div class="flyer">
-  <div class="ticker-wrap">
-    <div class="ticker">
-      <span class="ticker-item">🔥 SESIÓN DIAGNÓSTICA 100% GRATIS</span>
-      <span class="ticker-item">✦ AGENDA TU EVALUACIÓN DE 20 MINUTOS</span>
-      <span class="ticker-item">🔥 SESIÓN DIAGNÓSTICA 100% GRATIS</span>
-      <span class="ticker-item">✦ AGENDA TU EVALUACIÓN DE 20 MINUTOS</span>
+<header>
+  <img src="https://i.postimg.cc/vHmDgp9P/Chat-GPT-Image-23-abr-2026-10-32-03-a-m.png" alt="Aguirre English Studio" class="logo-nav">
+  <nav>
+    <a href="#enfoques">Enfoques</a>
+    <a href="#planes">Planes</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Potencia tu inglés, logra <span>tu meta.</span></h1>
+    <p>Clases particulares 1 a 1 lideradas por Carlos Aguirre. Profesor licenciado con experiencia internacional para llevar tu carrera al siguiente nivel.</p>
+    <a href="#planes" style="background: var(--accent); color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block;">Ver Planes de Estudio</a>
+  </div>
+  <div class="hero-image">
+    <div style="background: var(--accent-light); padding: 20px; border-radius: 30px; display: inline-block;">
+        <div style="width: 300px; height: 350px; background: #ddd; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">Tu Foto Aquí</div>
     </div>
   </div>
-  
-  <div class="content">
-    <div class="header">
-      <img src="https://i.postimg.cc/vHmDgp9P/Chat-GPT-Image-23-abr-2026-10-32-03-a-m.png" alt="Aguirre English Studio Logo" class="official-logo">
-      <span class="badge">Clases 1 a 1 Online</span>
-    </div>
+</section>
 
-    <div class="hero">
-      <h1>Potencia tu inglés, logra <span>tu meta.</span></h1>
-      <p>Profesor licenciado con clases particulares enfocadas en lo que necesitas para tu desarrollo internacional y laboral.</p>
+<section id="enfoques">
+  <h2 class="section-title">Nuestros Enfoques</h2>
+  <div class="enfoques-grid">
+    <div class="enfoque-card">
+      <span class="icon">📝</span>
+      <h3>IELTS / TOEFL</h3>
+      <p>Preparación experta para certificar y validar tu nivel internacionalmente.</p>
     </div>
+    <div class="enfoque-card">
+      <span class="icon">💼</span>
+      <h3>Business English</h3>
+      <p>Vocabulario y estrategias para entrevistas, reuniones y presentaciones.</p>
+    </div>
+    <div class="enfoque-card">
+      <span class="icon">✈️</span>
+      <h3>Working Holiday</h3>
+      <p>Prepárate para vivir y trabajar en el extranjero con total confianza.</p>
+    </div>
+    <div class="enfoque-card">
+      <span class="icon">🌱</span>
+      <h3>Inglés General</h3>
+      <p>Domina el idioma desde cero con un método dinámico y sin presiones.</p>
+    </div>
+  </div>
+</section>
 
-    <div class="bio-card">
-      <p class="bio-text">✨ Clases lideradas por <strong>Carlos Aguirre</strong>, Profesor de Inglés Licenciado y Educador con experiencia internacional (Denver, USA). Método enfocado en resultados reales.</p>
-      <div class="stats-grid">
-        <div class="stat-item">
-          <span class="stat-number">+5</span>
-          <span class="stat-label">Años de Exp.</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">+1.500</span>
-          <span class="stat-label">Clases dadas</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">Personalizado</span>
-        </div>
+<section id="planes" class="planes-bg">
+  <h2 class="section-title">Planes de Estudio Mensual</h2>
+  <div class="planes-wrapper">
+    
+    <div class="plan-card plan-featured">
+      <span class="ribbon">PROMO MES</span>
+      <h3>Plan Inicio</h3>
+      <p class="details">4 clases • 1 por semana • 60 min c/u</p>
+      <ul style="list-style: none; margin-bottom: 20px; font-size: 0.9rem;">
+        <li>✓ Material personalizado</li>
+        <li>✓ Flexibilidad horaria</li>
+        <li>✓ Acceso a plataforma</li>
+      </ul>
+      <div class="price-box">
+        <span class="price-old">Antes $80.000</span>
+        <div class="price-now">$60.000</div>
+        <span class="price-currency">CLP / MENSUAL</span>
       </div>
     </div>
 
-    <div>
-      <div class="section-title">Nuestros Enfoques</div>
-      <div class="grid-enfoques">
-        <div class="card-enfoque">
-          <span class="icon">📝</span>
-          <h3>IELTS / TOEFL</h3>
-          <p>Preparación experta para certificar y validar tu nivel.</p>
-        </div>
-        <div class="card-enfoque">
-          <span class="icon">✈️</span>
-          <h3>Working Holiday</h3>
-          <p>Herramientas esenciales para comunicarte con total soltura en tus viajes.</p>
-        </div>
-        <div class="card-enfoque">
-          <span class="icon">💼</span>
-          <h3>Inglés Profesional</h3>
-          <p>Vocabulario clave para ascender en tu carrera y entrevistas.</p>
-        </div>
-        <div class="card-enfoque">
-          <span class="icon">🌱</span>
-          <h3>Inglés General</h3>
-          <p>Domina el idioma desde cero y progresa a tu propio ritmo.</p>
-        </div>
+    <div class="plan-card">
+      <h3>Plan Estándar</h3>
+      <p class="details">8 clases • 2 por semana • 60 min c/u</p>
+      <ul style="list-style: none; margin-bottom: 20px; font-size: 0.9rem;">
+        <li>✓ Mayor intensidad</li>
+        <li>✓ Feedback continuo</li>
+        <li>✓ Seguimiento de metas</li>
+      </ul>
+      <div class="price-box">
+        <div class="price-now">$150.000</div>
+        <span class="price-currency">CLP / MENSUAL</span>
       </div>
     </div>
 
-    <div>
-      <div class="section-title">Elige tu plan mensual</div>
-      <div class="plans">
-
-        <div class="plan plan-inicio">
-          <div class="plan-left">
-            <div class="plan-name">Plan Inicio</div>
-            <div class="plan-detail">4 clases · 1 por semana · 60 min c/u</div>
-          </div>
-          <div class="plan-right">
-            <span class="old-price">$80.000</span>
-            <div class="plan-price new-price">$60.000</div>
-            <div class="plan-currency">CLP / MES</div>
-          </div>
-        </div>
-
-        <div class="plan plan-estandar">
-          <div class="plan-left">
-            <div class="plan-name">Plan Estándar</div>
-            <div class="plan-detail">8 clases · 2 por semana · 60 min c/u</div>
-          </div>
-          <div class="plan-right">
-            <div class="plan-price">$150.000</div>
-            <div class="plan-currency">CLP / MES</div>
-          </div>
-        </div>
-
-        <div class="plan plan-intensivo">
-          <div class="plan-left">
-            <div class="plan-name">Plan Intensivo</div>
-            <div class="plan-detail">12 clases · 3 por semana · 60 min c/u</div>
-          </div>
-          <div class="plan-right">
-            <div class="plan-price">$200.000</div>
-            <div class="plan-currency">CLP / MES</div>
-          </div>
-        </div>
-
+    <div class="plan-card">
+      <h3>Plan Intensivo</h3>
+      <p class="details">12 clases • 3 por semana • 60 min c/u</p>
+      <ul style="list-style: none; margin-bottom: 20px; font-size: 0.9rem;">
+        <li>✓ Avance ultra rápido</li>
+        <li>✓ Inmersión total</li>
+        <li>✓ Preparación express</li>
+      </ul>
+      <div class="price-box">
+        <div class="price-now">$200.000</div>
+        <span class="price-currency">CLP / MENSUAL</span>
       </div>
-    </div>
-
-    <div class="beneficios-list">
-      <div class="beneficio-item">Sesión diagnóstica inicial de 20 minutos GRATIS</div>
-      <div class="beneficio-item">Materiales de estudio y seguimiento incluidos</div>
-      <div class="beneficio-item">Horarios totalmente flexibles coordinados contigo</div>
-    </div>
-
-    <div>
-      <div class="section-title">Testimonios Reales</div>
-      <div class="testimonials-container">
-        <div class="testimonial-card">
-          <p class="testimonial-quote">"Partí desde cero porque me daba pánico hablar. Carlos me tuvo un montón de paciencia, las clases son súper dinámicas y hoy ya puedo tener reuniones de trabajo sin quedar en blanco."</p>
-          <div class="testimonial-meta">
-            <span>— Matías V., Desarrollador Web (Valparaíso)</span>
-            <span class="stars">⭐⭐⭐⭐⭐</span>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-quote">"Necesitaba rendir el IELTS para una visa de Australia y estaba super trancada con el Speaking. Carlos me dio los tips exactos y la estructura para perder el miedo. Logré el puntaje que me pedían."</p>
-          <div class="testimonial-meta">
-            <span>— Constanza N., Diseñadora UI (Santiago)</span>
-            <span class="stars">⭐⭐⭐⭐⭐</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="section-title">Preguntas Frecuentes</div>
-      <div class="faq-container">
-        <details class="faq-item" open>
-          <summary class="faq-question">💡 ¿Necesito tener una base o saber algo para empezar?</summary>
-          <div class="faq-answer">
-            <p><strong>¡Para nada! No necesitas saber absolutamente nada de inglés para comenzar.</strong> Nuestro enfoque de Inglés General está diseñado de forma amigable para guiarte desde el absoluto cero.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-question">💳 ¿Cómo se pagan las mensualidades?</summary>
-          <div class="faq-answer">
-            <p>Mediante <strong>transferencia bancaria electrónica</strong> o <strong>Cuenta RUT</strong> al inicio de tu ciclo mensual.</p>
-          </div>
-        </details>
-      </div>
-    </div>
-
-    <a href="https://wa.me/56995192413?text=Hola%20Carlos,%20me%20interesa%20agendar%20la%20sesi%C3%B3n%20diagn%C3%B3stica%20gratuita%20de%20ingl%C3%A9s." class="cta-whatsapp" target="_blank">
-      <span class="cta-title">¿Listo para empezar?</span>
-      <div class="cta-btn-box">
-        <span>💬 Hablar directo a WhatsApp</span>
-      </div>
-      <span class="cta-sub">Haz clic aquí para agendar tu sesión gratis</span>
-    </a>
-
-    <div class="footer">
-      <span>© 2026 Aguirre English Studio</span>
-      <span>Clases 1 a 1 Profesionales</span>
     </div>
 
   </div>
-</div>
+</section>
+
+<section id="testimonios">
+  <h2 class="section-title">Lo que dicen mis alumnos</h2>
+  <div class="testimonios-grid">
+    <div class="test-card">
+      <div class="test-header">
+        <div class="test-avatar" style="background: url('https://i.pravatar.cc/150?u=matias') center/cover;"></div>
+        <div class="test-info">
+          <h4>Matías V.</h4>
+          <p>Desarrollador Web</p>
+        </div>
+      </div>
+      <p class="test-content">"Partí desde cero porque me daba pánico hablar. Carlos me tuvo un montón de paciencia, las clases son súper dinámicas y hoy ya puedo tener reuniones de trabajo."</p>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="test-card">
+      <div class="test-header">
+        <div class="test-avatar" style="background: url('https://i.pravatar.cc/150?u=cony') center/cover;"></div>
+        <div class="test-info">
+          <h4>Constanza N.</h4>
+          <p>Diseñadora UI</p>
+        </div>
+      </div>
+      <p class="test-content">"Necesitaba el IELTS para Australia y estaba trabada con el Speaking. Logré el puntaje que pedían gracias a la estructura que me enseñó Carlos."</p>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="test-card">
+      <div class="test-header">
+        <div class="test-avatar" style="background: url('https://i.pravatar.cc/150?u=seba') center/cover;"></div>
+        <div class="test-info">
+          <h4>Sebastián R.</h4>
+          <p>Ingeniero de Proyectos</p>
+        </div>
+      </div>
+      <p class="test-content">"Preparé mis entrevistas para una multinacional y quedé en el puesto. Se enfoca directo en tu área de trabajo."</p>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="cta-section">
+  <h2 class="section-title">¿Empezamos hoy?</h2>
+  <p style="margin-bottom: 30px; font-size: 1.1rem;">Agenda tu sesión diagnóstica de 20 minutos totalmente GRATIS.</p>
+  <a href="https://wa.me/56995192413?text=Hola%20Carlos,%20quiero%20agendar%20mi%20sesion%20diagnostica%20gratis." class="btn-whatsapp" target="_blank">
+    💬 Hablar por WhatsApp
+  </a>
+</section>
+
+<footer>
+  <img src="https://i.postimg.cc/vHmDgp9P/Chat-GPT-Image-23-abr-2026-10-32-03-a-m.png" alt="" style="height: 40px; filter: brightness(0) invert(1); margin-bottom: 20px;">
+  <p>© 2026 Aguirre English Studio | Todos los derechos reservados.</p>
+</footer>
 
 </body>
 </html>
