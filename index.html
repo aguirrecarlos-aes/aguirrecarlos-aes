@@ -15,11 +15,11 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 15px;
+  padding: 20px 15px;
   font-family: 'Outfit', sans-serif;
 }
 
-/* ===== CONTENEDOR PRINCIPAL (Fondo Blanco/Azul/Oro) ===== */
+/* ===== CONTENEDOR PRINCIPAL (Optimizado para PC y Móvil) ===== */
 .flyer {
   width: 100%;
   max-width: 480px;
@@ -121,6 +121,53 @@ body {
   font-size: 14px;
   color: #475569;
   line-height: 1.6;
+}
+
+/* ===== SECCIÓN MICRO-BIO Y INDICADORES DE CONFIANZA ===== */
+.bio-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bio-text {
+  font-size: 12.5px;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  text-align: center;
+}
+
+.stat-item {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 10px 4px;
+  border-radius: 8px;
+}
+
+.stat-number {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: #C49C2A;
+  margin-bottom: 2px;
+}
+
+.stat-label {
+  font-size: 10px;
+  color: #64748B;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 /* ===== ENFOQUES DE APRENDIZAJE ===== */
@@ -238,6 +285,88 @@ body {
   margin-top: 2px;
 }
 
+/* ===== TESTIMONIOS ===== */
+.testimonials-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.testimonial-card {
+  background: #F8FAFC;
+  border-left: 3px solid #C49C2A;
+  padding: 12px 14px;
+  border-radius: 0 8px 8px 0;
+}
+
+.testimonial-quote {
+  font-size: 12.5px;
+  color: #33414F;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.testimonial-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: #64748B;
+  font-weight: 600;
+}
+
+.stars {
+  color: #C49C2A;
+  font-size: 10px;
+}
+
+/* ===== PREGUNTAS FRECUENTES (ACORDEÓN NATIVO) ===== */
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faq-item {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.faq-item[open] {
+  background: #F0F9FF;
+  border-color: #BAE6FD;
+}
+
+.faq-question {
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #002855;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  list-style: none; /* Remueve flecha nativa en algunos navegadores */
+}
+
+.faq-question::-webkit-details-marker {
+  display: none; /* Remueve flecha nativa en Chrome/Safari */
+}
+
+.faq-answer {
+  padding: 0 14px 14px 14px;
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.faq-answer strong {
+  color: #002855;
+}
+
 /* ===== BENEFICIOS ADICIONALES ===== */
 .beneficios-list {
   display: flex;
@@ -351,6 +480,25 @@ body {
       <p>Profesor licenciado con clases particulares enfocadas en lo que necesitas para tu desarrollo internacional y laboral.</p>
     </div>
 
+    <!-- SECCIÓN: SOBRE EL TEACHER & CONFIANZA -->
+    <div class="bio-card">
+      <p class="bio-text">✨ Clases lideradas por <strong>Carlos Aguirre</strong>, Profesor de Inglés Licenciado y Educador con experiencia internacional (Denver, USA). Método enfocado en resultados reales.</p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">+5</span>
+          <span class="stat-label">Años de Exp.</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">+1.500</span>
+          <span class="stat-label">Clases dadas</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Personalizado</span>
+        </div>
+      </div>
+    </div>
+
     <div>
       <div class="section-title">Nuestros Enfoques</div>
       <div class="grid-enfoques">
@@ -423,9 +571,81 @@ body {
       <div class="beneficio-item">Horarios totalmente flexibles coordinados contigo</div>
     </div>
 
+    <!-- SECCIÓN: TESTIMONIOS ADAPTADOS -->
+    <div>
+      <div class="section-title">Testimonios Reales</div>
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"Partí desde cero porque me daba pánico hablar. Carlos me tuvo un montón de paciencia, las clases son súper dinámicas y hoy ya puedo tener reuniones de trabajo sin quedar en blanco."</p>
+          <div class="testimonial-meta">
+            <span>— Matías V., Desarrollador Web (Valparaíso)</span>
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"Necesitaba rendir el IELTS para una visa de Australia y estaba super trancada con el Speaking. Carlos me dio los tips exactos y la estructura para perder el miedo. Logré el puntaje que me pedían."</p>
+          <div class="testimonial-meta">
+            <span>— Constanza N., Diseñadora UI (Santiago)</span>
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"Las clases 1 a 1 son otro nivel. Preparé mis entrevistas en inglés para una multinacional tecnológica y quedé en el puesto. Se enfoca directo en tu área de trabajo."</p>
+          <div class="testimonial-meta">
+            <span>— Sebastián R., Ing. de Proyectos (Antofagasta)</span>
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN: PREGUNTAS FRECUENTES (FAQs) -->
+    <div>
+      <div class="section-title">Preguntas Frecuentes</div>
+      <div class="faq-container">
+        <details class="faq-item" open>
+          <summary class="faq-question">💡 ¿Necesito tener una base o saber algo para empezar?</summary>
+          <div class="faq-answer">
+            <p><strong>¡Para nada! No necesitas saber absolutamente nada de inglés para comenzar.</strong> Nuestro enfoque de Inglés General está diseñado de forma amigable para guiarte desde el absoluto cero, respetando tu ritmo y construyendo tu confianza desde la primera sesión.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">💳 ¿Cómo se pagan las mensualidades?</summary>
+          <div class="faq-answer">
+            <p>Las mensualidades se cancelan de manera anticipada al inicio del ciclo de tus clases mediante <strong>transferencia bancaria electrónica</strong> o <strong>Cuenta RUT</strong>.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">⏳ ¿Qué pasa si tengo que cancelar una clase?</summary>
+          <div class="faq-answer">
+            <p>Entendemos que surgen imprevistos. Solo debes avisar con un mínimo de <strong>24 horas de anticipación</strong> y podremos reprogramar la sesión dentro del mes correspondiente.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">📚 ¿Necesito comprar libros o guías?</summary>
+          <div class="faq-answer">
+            <p>No, ningún gasto extra. Todo el <strong>material digital, lecturas y herramientas de seguimiento personalizado</strong> están completamente incluidos dentro del valor de tu plan.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- BOTÓN ACCIÓN WHATSAPP -->
     <a href="https://wa.me/56995192413?text=Hola%20Carlos,%20me%20interesa%20agendar%20la%20sesi%C3%B3n%20diagn%C3%B3stica%20gratuita%20de%20ingl%C3%A9s." class="cta-whatsapp" target="_blank">
       <span class="cta-title">¿Listo para empezar?</span>
       <div class="cta-btn-box">
         <span>💬 Hablar directo a WhatsApp</span>
       </div>
-      <span class="cta-sub">Haz clic aquí para agendar tu sesión gratis
+      <span class="cta-sub">Haz clic aquí para agendar tu sesión gratis</span>
+    </a>
+
+    <div class="footer">
+      <span>© 2026 Aguirre English Studio</span>
+      <span>Clases 1 a 1 Profesionales</span>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
