@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aguirre English Studio | Clases de Inglés Personalizadas</title>
+<title>Aguirre English Studio | Clases de Inglés de Alto Impacto</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ===== VARIABLES Y RESET ===== */
 :root {
   --primary: #002855;
   --accent: #C49C2A;
+  --gold-grad: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
   --accent-light: #E8C96B;
   --offer: #D94624;
   --bg-light: #F8FAFC;
@@ -20,14 +20,7 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-
-body {
-  font-family: 'Outfit', sans-serif;
-  color: var(--text-main);
-  line-height: 1.6;
-  background-color: var(--white);
-}
-
+body { font-family: 'Outfit', sans-serif; color: var(--text-main); line-height: 1.6; background-color: var(--white); }
 h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
 /* ===== NAVEGACIÓN ===== */
@@ -42,227 +35,91 @@ header {
   z-index: 1000;
   box-shadow: 0 2px 15px rgba(0,0,0,0.05);
 }
-
-.logo-nav { height: 50px; }
-
-nav a {
-  text-decoration: none;
-  color: var(--primary);
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-left: 20px;
-  transition: var(--transition);
-}
-
+.logo-nav { height: 45px; }
+nav a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-left: 20px; transition: var(--transition); }
 nav a:hover { color: var(--accent); }
 
 /* ===== HERO SECTION ===== */
 .hero {
-  padding: 80px 5%;
-  background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  min-height: 80vh;
-}
-
-.hero-content { flex: 1; min-width: 300px; padding-right: 40px; }
-.hero-image { flex: 1; min-width: 300px; text-align: center; }
-
-.hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  color: var(--primary);
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-}
-
-.hero-content h1 span { color: var(--accent); font-style: italic; }
-
-.hero-content p {
-  font-size: 1.2rem;
-  color: var(--text-muted);
-  margin-bottom: 2rem;
-  max-width: 600px;
-}
-
-.hero-image img {
-  max-width: 100%;
-  border-radius: 20px;
-  /* Simulación de imagen/ilustracion */
-}
-
-/* ===== SECCIONES GENERALES ===== */
-section { padding: 80px 5%; }
-.section-title {
+  padding: 100px 5%;
+  background: linear-gradient(rgba(0,40,85,0.02), rgba(0,40,85,0.05)), url('https://www.transparenttextures.com/patterns/cubes.png');
   text-align: center;
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 3rem;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: var(--accent);
-  margin: 15px auto 0;
-}
-
-/* ===== ENFOQUES GRID ===== */
-.enfoques-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.enfoque-card {
-  background: var(--bg-light);
-  padding: 30px;
-  border-radius: 15px;
-  transition: var(--transition);
-  border: 1px solid #e2e8f0;
-}
-
-.enfoque-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.enfoque-card .icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
-
-/* ===== PLANES (GRID RESPONSIVO) ===== */
-.planes-bg { background-color: var(--primary); color: var(--white); }
-.planes-bg .section-title { color: var(--white); }
-
-.planes-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  align-items: stretch;
-}
-
-.plan-card {
-  background: var(--white);
-  color: var(--text-main);
-  padding: 40px 30px;
-  border-radius: 20px;
-  flex: 1;
-  min-width: 300px;
-  max-width: 380px;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
-  transition: var(--transition);
-  position: relative;
-}
-
-/* --- PLAN INICIO DESTACADO --- */
-.plan-featured {
-  transform: scale(1.05);
-  border: 3px solid var(--accent);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  z-index: 2;
-}
-
-.ribbon {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: var(--offer);
-  color: white;
-  padding: 5px 15px;
-  border-radius: 50px;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.plan-card h3 { font-size: 1.8rem; margin-bottom: 10px; color: var(--primary); }
-.plan-card .details { font-family: 'DM Mono', monospace; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; }
-
-.price-box { margin-top: auto; padding-top: 20px; border-top: 1px solid #eee; }
-
-.price-old {
-  display: block;
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  text-decoration: line-through;
-  margin-bottom: 5px;
-}
-
-.price-now {
-  font-size: 2.8rem;
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  color: var(--primary);
-  line-height: 1;
-}
-
-.plan-featured .price-now { color: var(--offer); }
-
-.price-currency { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--text-muted); }
-
-/* ===== TESTIMONIOS WEB ===== */
-.testimonios-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-}
-
-.test-card {
-  background: var(--bg-light);
-  padding: 30px;
-  border-radius: 20px;
-  position: relative;
-  border-left: 5px solid var(--accent);
-}
-
-.test-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-.test-avatar { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; background: #ddd; }
-.test-info h4 { font-size: 1rem; color: var(--primary); }
-.test-info p { font-size: 0.8rem; color: var(--text-muted); }
-
-.test-content { font-style: italic; font-size: 0.95rem; margin-bottom: 15px; }
-.stars { color: var(--accent); }
-
-/* ===== WHATSAPP FLOATING / FOOTER ===== */
-.cta-section { text-align: center; background: #f1f5f9; }
-
-.btn-whatsapp {
-  display: inline-flex;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
-  background: #25D366;
-  color: white;
-  padding: 18px 35px;
+}
+.hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); color: var(--primary); line-height: 1.1; margin-bottom: 1.5rem; max-width: 900px; }
+.hero h1 span { color: var(--accent); font-style: italic; }
+.hero p { font-size: 1.3rem; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 700px; }
+
+/* ===== SECCIÓN SOBRE MÍ ===== */
+.about { padding: 80px 5%; background: var(--bg-light); display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+.about-image { flex: 1; min-width: 300px; position: relative; }
+.about-image img { width: 100%; max-width: 450px; border-radius: 20px; box-shadow: 20px 20px 0px var(--accent); object-fit: cover; }
+.about-content { flex: 1.2; min-width: 350px; }
+.about-content h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; }
+.about-content p { font-size: 1.1rem; margin-bottom: 1.2rem; color: var(--text-main); }
+.highlight-box { background: var(--white); padding: 20px; border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+/* ===== SECCIONES GENERALES ===== */
+section { padding: 90px 5%; }
+.section-title { text-align: center; font-size: 2.8rem; color: var(--primary); margin-bottom: 3.5rem; }
+.section-title::after { content: ''; display: block; width: 70px; height: 4px; background: var(--accent); margin: 20px auto 0; }
+
+/* ===== PLANES (REDISEÑO DORADO) ===== */
+.planes-bg { background-color: var(--primary); color: var(--white); }
+.planes-bg .section-title { color: var(--white); }
+.planes-wrapper { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; align-items: stretch; }
+.plan-card { background: var(--white); color: var(--text-main); padding: 45px 35px; border-radius: 24px; flex: 1; min-width: 310px; max-width: 380px; display: flex; flex-direction: column; transition: var(--transition); position: relative; border: 1px solid #eee; }
+
+/* --- FOCO: PLAN INICIO DORADO --- */
+.plan-featured {
+  border: 4px solid transparent;
+  background-image: linear-gradient(white, white), var(--gold-grad);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  transform: scale(1.06);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+  z-index: 5;
+}
+.promo-label {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold-grad);
+  color: #4a3a00;
+  padding: 8px 25px;
   border-radius: 50px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.2rem;
-  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-  transition: var(--transition);
+  font-size: 0.85rem;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-transform: uppercase;
 }
+.price-old { font-size: 1.2rem; color: #94A3B8; text-decoration: line-through; display: block; font-weight: 500; }
+.price-now { font-size: 3.2rem; font-family: 'Playfair Display', serif; font-weight: 900; color: var(--primary); line-height: 1; margin: 5px 0; }
+.plan-featured .price-now { color: var(--accent); background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-.btn-whatsapp:hover { transform: scale(1.05); }
+/* ===== TESTIMONIOS ===== */
+.testimonios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.test-card { background: var(--bg-light); padding: 35px; border-radius: 20px; border-bottom: 4px solid var(--accent); }
+.test-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.test-avatar { width: 65px; height: 65px; border-radius: 50%; object-fit: cover; border: 3px solid var(--white); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 
-footer {
-  background: var(--primary);
-  color: white;
-  padding: 40px 5%;
-  text-align: center;
-}
+/* ===== FOOTER & CTA ===== */
+.cta-section { text-align: center; background: var(--bg-light); border-top: 1px solid #eef; }
+.btn-whatsapp { display: inline-flex; align-items: center; gap: 12px; background: #25D366; color: white; padding: 20px 45px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.3rem; transition: var(--transition); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); }
+.btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3); }
+footer { background: var(--primary); color: var(--white); padding: 50px 5%; text-align: center; }
 
-/* RESPONSIVO MÓVIL */
 @media (max-width: 768px) {
-  header { flex-direction: column; gap: 15px; }
-  nav { margin-top: 10px; }
-  nav a { margin: 0 10px; font-size: 0.8rem; }
-  .hero-content { padding-right: 0; text-align: center; margin-bottom: 40px; }
-  .plan-featured { transform: scale(1); }
+  .hero h1 { font-size: 2.5rem; }
+  .about { text-align: center; justify-content: center; }
+  .plan-featured { transform: scale(1); margin: 20px 0; }
 }
-
 </style>
 </head>
 <body>
@@ -270,7 +127,7 @@ footer {
 <header>
   <img src="https://i.postimg.cc/vHmDgp9P/Chat-GPT-Image-23-abr-2026-10-32-03-a-m.png" alt="Aguirre English Studio" class="logo-nav">
   <nav>
-    <a href="#enfoques">Enfoques</a>
+    <a href="#sobre-mi">Sobre Mí</a>
     <a href="#planes">Planes</a>
     <a href="#testimonios">Testimonios</a>
     <a href="#contacto">Contacto</a>
@@ -278,89 +135,73 @@ footer {
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <h1>Potencia tu inglés, logra <span>tu meta.</span></h1>
-    <p>Clases particulares 1 a 1 lideradas por Carlos Aguirre. Profesor licenciado con experiencia internacional para llevar tu carrera al siguiente nivel.</p>
-    <a href="#planes" style="background: var(--accent); color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block;">Ver Planes de Estudio</a>
-  </div>
-  <div class="hero-image">
-    <div style="background: var(--accent-light); padding: 20px; border-radius: 30px; display: inline-block;">
-        <div style="width: 300px; height: 350px; background: #ddd; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">Tu Foto Aquí</div>
-    </div>
-  </div>
+  <h1>Domina el inglés. Alcanza tus <span>objetivos globales.</span></h1>
+  <p>Entrenamiento lingüístico personalizado para profesionales que buscan expandir sus fronteras laborales y personales.</p>
+  <a href="#planes" style="background: var(--primary); color: white; padding: 18px 40px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1.1rem;">Ver Planes y Precios</a>
 </section>
 
-<section id="enfoques">
-  <h2 class="section-title">Nuestros Enfoques</h2>
-  <div class="enfoques-grid">
-    <div class="enfoque-card">
-      <span class="icon">📝</span>
-      <h3>IELTS / TOEFL</h3>
-      <p>Preparación experta para certificar y validar tu nivel internacionalmente.</p>
-    </div>
-    <div class="enfoque-card">
-      <span class="icon">💼</span>
-      <h3>Business English</h3>
-      <p>Vocabulario y estrategias para entrevistas, reuniones y presentaciones.</p>
-    </div>
-    <div class="enfoque-card">
-      <span class="icon">✈️</span>
-      <h3>Working Holiday</h3>
-      <p>Prepárate para vivir y trabajar en el extranjero con total confianza.</p>
-    </div>
-    <div class="enfoque-card">
-      <span class="icon">🌱</span>
-      <h3>Inglés General</h3>
-      <p>Domina el idioma desde cero con un método dinámico y sin presiones.</p>
+<section id="sobre-mi" class="about">
+  <div class="about-image">
+    <img src="https://i.postimg.cc/9FmS0Nks/Whats-App-Image-2026-04-23-at-10-53-48-AM.jpg" alt="Carlos Aguirre - English Teacher">
+  </div>
+  <div class="about-content">
+    <h2>Mucho más que una clase, es tu <span>próximo paso.</span></h2>
+    <p>Soy <strong>Carlos Aguirre</strong>, Profesor de Inglés Licenciado y Educador con una misión clara: ayudarte a romper la barrera del idioma de forma definitiva.</p>
+    <p>Mi metodología se perfeccionó tras mi paso por el programa de <strong>Academic English en Bridge English, Denver, USA</strong>, combinando la precisión técnica con la fluidez natural del inglés norteamericano.</p>
+    <div class="highlight-box">
+      <p style="margin-bottom:0; font-weight: 600; color: var(--primary);">Especialista en preparación de exámenes internacionales, entrevistas laborales y reasentamiento en el extranjero (Working Holiday).</p>
     </div>
   </div>
 </section>
 
 <section id="planes" class="planes-bg">
-  <h2 class="section-title">Planes de Estudio Mensual</h2>
+  <h2 class="section-title">Planes de Inversión Mensual</h2>
   <div class="planes-wrapper">
     
     <div class="plan-card plan-featured">
-      <span class="ribbon">PROMO MES</span>
+      <span class="promo-label">✨ ¡OFERTA EXCLUSIVA DEL MES! ✨</span>
       <h3>Plan Inicio</h3>
-      <p class="details">4 clases • 1 por semana • 60 min c/u</p>
-      <ul style="list-style: none; margin-bottom: 20px; font-size: 0.9rem;">
-        <li>✓ Material personalizado</li>
-        <li>✓ Flexibilidad horaria</li>
-        <li>✓ Acceso a plataforma</li>
+      <p style="color: var(--accent); font-weight: 700; font-size: 0.9rem; margin-bottom: 15px;">Ideal para comenzar hoy</p>
+      <ul style="list-style: none; margin-bottom: 25px; font-size: 0.95rem; color: var(--text-muted);">
+        <li style="margin-bottom: 8px;">✦ 4 clases al mes (1 semanal)</li>
+        <li style="margin-bottom: 8px;">✦ Sesiones de 60 minutos</li>
+        <li style="margin-bottom: 8px;">✦ Material digital incluido</li>
+        <li>✦ Feedback personalizado</li>
       </ul>
-      <div class="price-box">
+      <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid #eee;">
         <span class="price-old">Antes $80.000</span>
         <div class="price-now">$60.000</div>
-        <span class="price-currency">CLP / MENSUAL</span>
+        <span style="font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--text-muted);">CLP / MES</span>
       </div>
     </div>
 
     <div class="plan-card">
       <h3>Plan Estándar</h3>
-      <p class="details">8 clases • 2 por semana • 60 min c/u</p>
-      <ul style="list-style: none; margin-bottom: 20px; font-size: 0.9rem;">
-        <li>✓ Mayor intensidad</li>
-        <li>✓ Feedback continuo</li>
-        <li>✓ Seguimiento de metas</li>
+      <p style="color: var(--primary); font-weight: 700; font-size: 0.9rem; margin-bottom: 15px;">El más solicitado</p>
+      <ul style="list-style: none; margin-bottom: 25px; font-size: 0.95rem; color: var(--text-muted);">
+        <li style="margin-bottom: 8px;">✦ 8 clases al mes (2 semanales)</li>
+        <li style="margin-bottom: 8px;">✦ Enfoque en fluidez y habla</li>
+        <li style="margin-bottom: 8px;">✦ Soporte vía WhatsApp</li>
+        <li>✦ Seguimiento de objetivos</li>
       </ul>
-      <div class="price-box">
+      <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid #eee;">
         <div class="price-now">$150.000</div>
-        <span class="price-currency">CLP / MENSUAL</span>
+        <span style="font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--text-muted);">CLP / MES</span>
       </div>
     </div>
 
     <div class="plan-card">
       <h3>Plan Intensivo</h3>
-      <p class="details">12 clases • 3 por semana • 60 min c/u</p>
-      <ul style="list-style: none; margin-bottom: 20px; font-size: 0.9rem;">
-        <li>✓ Avance ultra rápido</li>
-        <li>✓ Inmersión total</li>
-        <li>✓ Preparación express</li>
+      <p style="color: var(--primary); font-weight: 700; font-size: 0.9rem; margin-bottom: 15px;">Resultados a corto plazo</p>
+      <ul style="list-style: none; margin-bottom: 25px; font-size: 0.95rem; color: var(--text-muted);">
+        <li style="margin-bottom: 8px;">✦ 12 clases al mes (3 semanales)</li>
+        <li style="margin-bottom: 8px;">✦ Preparación express exámenes</li>
+        <li style="margin-bottom: 8px;">✦ Inmersión lingüística total</li>
+        <li>✦ Prioridad en agenda</li>
       </ul>
-      <div class="price-box">
+      <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid #eee;">
         <div class="price-now">$200.000</div>
-        <span class="price-currency">CLP / MENSUAL</span>
+        <span style="font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--text-muted);">CLP / MES</span>
       </div>
     </div>
 
@@ -368,57 +209,57 @@ footer {
 </section>
 
 <section id="testimonios">
-  <h2 class="section-title">Lo que dicen mis alumnos</h2>
+  <h2 class="section-title">Resultados Reales</h2>
   <div class="testimonios-grid">
     <div class="test-card">
       <div class="test-header">
-        <div class="test-avatar" style="background: url('https://i.pravatar.cc/150?u=matias') center/cover;"></div>
-        <div class="test-info">
-          <h4>Matías V.</h4>
-          <p>Desarrollador Web</p>
+        <img src="https://i.pravatar.cc/150?u=matias" class="test-avatar" alt="Alumno">
+        <div>
+          <h4 style="color: var(--primary);">Matías V.</h4>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Dev Web (Valparaíso)</p>
         </div>
       </div>
-      <p class="test-content">"Partí desde cero porque me daba pánico hablar. Carlos me tuvo un montón de paciencia, las clases son súper dinámicas y hoy ya puedo tener reuniones de trabajo."</p>
-      <div class="stars">★★★★★</div>
+      <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 15px;">"Perdí el pánico a hablar. Las clases son súper dinámicas y hoy ya puedo tener reuniones de trabajo sin quedar en blanco."</p>
+      <div style="color: var(--accent);">★★★★★</div>
     </div>
 
     <div class="test-card">
       <div class="test-header">
-        <div class="test-avatar" style="background: url('https://i.pravatar.cc/150?u=cony') center/cover;"></div>
-        <div class="test-info">
-          <h4>Constanza N.</h4>
-          <p>Diseñadora UI</p>
+        <img src="https://i.pravatar.cc/150?u=cony" class="test-avatar" alt="Alumna">
+        <div>
+          <h4 style="color: var(--primary);">Constanza N.</h4>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Diseñadora UI (Santiago)</p>
         </div>
       </div>
-      <p class="test-content">"Necesitaba el IELTS para Australia y estaba trabada con el Speaking. Logré el puntaje que pedían gracias a la estructura que me enseñó Carlos."</p>
-      <div class="stars">★★★★★</div>
+      <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 15px;">"Logré el puntaje que me pedían para el IELTS. Carlos me dio los tips exactos para perder el miedo al Speaking."</p>
+      <div style="color: var(--accent);">★★★★★</div>
     </div>
 
     <div class="test-card">
       <div class="test-header">
-        <div class="test-avatar" style="background: url('https://i.pravatar.cc/150?u=seba') center/cover;"></div>
-        <div class="test-info">
-          <h4>Sebastián R.</h4>
-          <p>Ingeniero de Proyectos</p>
+        <img src="https://i.pravatar.cc/150?u=seba" class="test-avatar" alt="Alumno">
+        <div>
+          <h4 style="color: var(--primary);">Sebastián R.</h4>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Ing. Proyectos (Antofagasta)</p>
         </div>
       </div>
-      <p class="test-content">"Preparé mis entrevistas para una multinacional y quedé en el puesto. Se enfoca directo en tu área de trabajo."</p>
-      <div class="stars">★★★★★</div>
+      <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 15px;">"Preparé mis entrevistas para una multinacional y quedé en el puesto. Se enfoca directo en lo que necesitas en tu área."</p>
+      <div style="color: var(--accent);">★★★★★</div>
     </div>
   </div>
 </section>
 
 <section id="contacto" class="cta-section">
-  <h2 class="section-title">¿Empezamos hoy?</h2>
-  <p style="margin-bottom: 30px; font-size: 1.1rem;">Agenda tu sesión diagnóstica de 20 minutos totalmente GRATIS.</p>
+  <h2 class="section-title">¿Listo para subir de nivel?</h2>
+  <p style="margin-bottom: 40px; font-size: 1.2rem; color: var(--text-muted);">Agenda tu sesión diagnóstica de 20 minutos <strong>totalmente GRATIS</strong>.</p>
   <a href="https://wa.me/56995192413?text=Hola%20Carlos,%20quiero%20agendar%20mi%20sesion%20diagnostica%20gratis." class="btn-whatsapp" target="_blank">
-    💬 Hablar por WhatsApp
+    💬 Agendar por WhatsApp
   </a>
 </section>
 
 <footer>
-  <img src="https://i.postimg.cc/vHmDgp9P/Chat-GPT-Image-23-abr-2026-10-32-03-a-m.png" alt="" style="height: 40px; filter: brightness(0) invert(1); margin-bottom: 20px;">
-  <p>© 2026 Aguirre English Studio | Todos los derechos reservados.</p>
+  <img src="https://i.postimg.cc/vHmDgp9P/Chat-GPT-Image-23-abr-2026-10-32-03-a-m.png" alt="Logo" style="height: 40px; filter: brightness(0) invert(1); margin-bottom: 20px;">
+  <p>© 2026 Aguirre English Studio | De Antofagasta para el mundo.</p>
 </footer>
 
 </body>
