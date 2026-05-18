@@ -9,7 +9,6 @@
 :root {
   --primary: #002855;
   --accent: #C49C2A;
-  --gold-grad: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
   --accent-light: #E8C96B;
   --offer: #D94624;
   --bg-light: #F8FAFC;
@@ -44,7 +43,7 @@ nav a:hover { color: var(--accent); }
   padding: 100px 5%;
   background: linear-gradient(rgba(0,40,85,0.02), rgba(0,40,85,0.05)), url('https://www.transparenttextures.com/patterns/cubes.png');
   text-align: center;
-  min-height: 60vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,8 +55,8 @@ nav a:hover { color: var(--accent); }
 
 /* ===== SECCIÓN SOBRE MÍ ===== */
 .about { padding: 80px 5%; background: var(--bg-light); display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
-.about-image { flex: 1; min-width: 300px; position: relative; }
-.about-image img { width: 100%; max-width: 450px; border-radius: 20px; box-shadow: 20px 20px 0px var(--accent); object-fit: cover; }
+.about-image { flex: 1; min-width: 300px; display: flex; justify-content: center; }
+.about-image img { width: 100%; max-width: 400px; height: auto; border-radius: 20px; box-shadow: 15px 15px 0px var(--primary); object-fit: cover; }
 .about-content { flex: 1.2; min-width: 350px; }
 .about-content h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; }
 .about-content p { font-size: 1.1rem; margin-bottom: 1.2rem; color: var(--text-main); }
@@ -68,40 +67,39 @@ section { padding: 90px 5%; }
 .section-title { text-align: center; font-size: 2.8rem; color: var(--primary); margin-bottom: 3.5rem; }
 .section-title::after { content: ''; display: block; width: 70px; height: 4px; background: var(--accent); margin: 20px auto 0; }
 
-/* ===== PLANES (REDISEÑO DORADO) ===== */
+/* ===== PLANES (MODERNO Y MINIMALISTA) ===== */
 .planes-bg { background-color: var(--primary); color: var(--white); }
 .planes-bg .section-title { color: var(--white); }
-.planes-wrapper { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; align-items: stretch; }
-.plan-card { background: var(--white); color: var(--text-main); padding: 45px 35px; border-radius: 24px; flex: 1; min-width: 310px; max-width: 380px; display: flex; flex-direction: column; transition: var(--transition); position: relative; border: 1px solid #eee; }
+.planes-wrapper { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; align-items: stretch; padding-top: 20px; }
+.plan-card { background: var(--white); color: var(--text-main); padding: 45px 35px; border-radius: 24px; flex: 1; min-width: 310px; max-width: 380px; display: flex; flex-direction: column; transition: var(--transition); position: relative; border: 1px solid #e2e8f0; }
 
-/* --- FOCO: PLAN INICIO DORADO --- */
+/* --- ENFOQUE EQUILIBRADO PLAN INICIO --- */
 .plan-featured {
-  border: 4px solid transparent;
-  background-image: linear-gradient(white, white), var(--gold-grad);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  transform: scale(1.06);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+  border: 2px solid var(--accent);
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   z-index: 5;
 }
 .promo-label {
   position: absolute;
-  top: -15px;
+  top: -16px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--gold-grad);
-  color: #4a3a00;
-  padding: 8px 25px;
+  background: var(--accent);
+  color: var(--white);
+  padding: 6px 20px;
   border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 800;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
   white-space: nowrap;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   text-transform: uppercase;
 }
-.price-old { font-size: 1.2rem; color: #94A3B8; text-decoration: line-through; display: block; font-weight: 500; }
-.price-now { font-size: 3.2rem; font-family: 'Playfair Display', serif; font-weight: 900; color: var(--primary); line-height: 1; margin: 5px 0; }
-.plan-featured .price-now { color: var(--accent); background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.price-old { font-size: 1.1rem; color: #94A3B8; text-decoration: line-through; display: block; font-weight: 500; margin-bottom: 2px; }
+.price-now { font-size: 3rem; font-family: 'Playfair Display', serif; font-weight: 900; color: var(--primary); line-height: 1; margin-bottom: 4px; }
+.plan-featured .price-now { color: var(--primary); }
+.price-currency { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
 
 /* ===== TESTIMONIOS ===== */
 .testimonios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
@@ -118,6 +116,7 @@ footer { background: var(--primary); color: var(--white); padding: 50px 5%; text
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.5rem; }
   .about { text-align: center; justify-content: center; }
+  .about-image img { box-shadow: 0px 15px 0px var(--primary); }
   .plan-featured { transform: scale(1); margin: 20px 0; }
 }
 </style>
@@ -142,14 +141,14 @@ footer { background: var(--primary); color: var(--white); padding: 50px 5%; text
 
 <section id="sobre-mi" class="about">
   <div class="about-image">
-    <img src="https://i.postimg.cc/9FmS0Nks/Whats-App-Image-2026-04-23-at-10-53-48-AM.jpg" alt="Carlos Aguirre - English Teacher">
+    <img src="https://i.postimg.cc/bwf2Wm4q/Chat-GPT-Image-26-abr-2026-09-38-24-a-m.png" alt="Carlos Aguirre - English Teacher">
   </div>
   <div class="about-content">
     <h2>Mucho más que una clase, es tu <span>próximo paso.</span></h2>
-    <p>Soy <strong>Carlos Aguirre</strong>, Profesor de Inglés Licenciado y Educador con una misión clara: ayudarte a romper la barrera del idioma de forma definitiva.</p>
-    <p>Mi metodología se perfeccionó tras mi paso por el programa de <strong>Academic English en Bridge English, Denver, USA</strong>, combinando la precisión técnica con la fluidez natural del inglés norteamericano.</p>
+    <p>Soy <strong>Carlos Aguirre</strong>, Profesor de Inglés Licenciado y Educador con una misión clara: ayudarte a romper la barra del idioma de forma definitiva.</p>
+    <p>Cuento con formación en el programa de <strong>Academic English en Denver, Colorado, USA</strong> y sumando valor a mi experiencia, he vivido en el extranjero, lo que me permite enseñarte no solo la estructura técnica, sino el inglés real y práctico que se usa en el día a día internacional.</p>
     <div class="highlight-box">
-      <p style="margin-bottom:0; font-weight: 600; color: var(--primary);">Especialista en preparación de exámenes internacionales, entrevistas laborales y reasentamiento en el extranjero (Working Holiday).</p>
+      <p style="margin-bottom:0; font-weight: 600; color: var(--primary);">Especialista en preparación de exámenes internacionales (IELTS/TOEFL), simulación de entrevistas laborales y orientación lingüística para Working Holiday.</p>
     </div>
   </div>
 </section>
@@ -159,19 +158,19 @@ footer { background: var(--primary); color: var(--white); padding: 50px 5%; text
   <div class="planes-wrapper">
     
     <div class="plan-card plan-featured">
-      <span class="promo-label">✨ ¡OFERTA EXCLUSIVA DEL MES! ✨</span>
+      <span class="promo-label">✨ PROMO DEL MES ✨</span>
       <h3>Plan Inicio</h3>
       <p style="color: var(--accent); font-weight: 700; font-size: 0.9rem; margin-bottom: 15px;">Ideal para comenzar hoy</p>
       <ul style="list-style: none; margin-bottom: 25px; font-size: 0.95rem; color: var(--text-muted);">
-        <li style="margin-bottom: 8px;">✦ 4 clases al mes (1 semanal)</li>
-        <li style="margin-bottom: 8px;">✦ Sesiones de 60 minutos</li>
-        <li style="margin-bottom: 8px;">✦ Material digital incluido</li>
-        <li>✦ Feedback personalizado</li>
+        <li style="margin-bottom: 8px;"><span style="color: var(--accent);">✦</span> 4 clases al mes (1 semanal)</li>
+        <li style="margin-bottom: 8px;"><span style="color: var(--accent);">✦</span> Sesiones individuales de 60 min</li>
+        <li style="margin-bottom: 8px;"><span style="color: var(--accent);">✦</span> Material de estudio digital incluido</li>
+        <li><span style="color: var(--accent);">✦</span> Orientación y feedback personalizado</li>
       </ul>
-      <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid #eee;">
+      <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid #e2e8f0;">
         <span class="price-old">Antes $80.000</span>
         <div class="price-now">$60.000</div>
-        <span style="font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--text-muted);">CLP / MES</span>
+        <span class="price-currency">CLP / MES</span>
       </div>
     </div>
 
@@ -179,14 +178,14 @@ footer { background: var(--primary); color: var(--white); padding: 50px 5%; text
       <h3>Plan Estándar</h3>
       <p style="color: var(--primary); font-weight: 700; font-size: 0.9rem; margin-bottom: 15px;">El más solicitado</p>
       <ul style="list-style: none; margin-bottom: 25px; font-size: 0.95rem; color: var(--text-muted);">
-        <li style="margin-bottom: 8px;">✦ 8 clases al mes (2 semanales)</li>
-        <li style="margin-bottom: 8px;">✦ Enfoque en fluidez y habla</li>
-        <li style="margin-bottom: 8px;">✦ Soporte vía WhatsApp</li>
-        <li>✦ Seguimiento de objetivos</li>
+        <li style="margin-bottom: 8px;"><span style="color: var(--primary);">✦</span> 8 clases al mes (2 semanales)</li>
+        <li style="margin-bottom: 8px;"><span style="color: var(--primary);">✦</span> Enfoque intensivo en fluidez y habla</li>
+        <li style="margin-bottom: 8px;"><span style="color: var(--primary);">✦</span> Soporte prioritario vía WhatsApp</li>
+        <li><span style="color: var(--primary);">✦</span> Seguimiento continuo de objetivos</li>
       </ul>
-      <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid #eee;">
+      <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid #e2e8f0;">
         <div class="price-now">$150.000</div>
-        <span style="font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--text-muted);">CLP / MES</span>
+        <span class="price-currency">CLP / MES</span>
       </div>
     </div>
 
@@ -194,14 +193,14 @@ footer { background: var(--primary); color: var(--white); padding: 50px 5%; text
       <h3>Plan Intensivo</h3>
       <p style="color: var(--primary); font-weight: 700; font-size: 0.9rem; margin-bottom: 15px;">Resultados a corto plazo</p>
       <ul style="list-style: none; margin-bottom: 25px; font-size: 0.95rem; color: var(--text-muted);">
-        <li style="margin-bottom: 8px;">✦ 12 clases al mes (3 semanales)</li>
-        <li style="margin-bottom: 8px;">✦ Preparación express exámenes</li>
-        <li style="margin-bottom: 8px;">✦ Inmersión lingüística total</li>
-        <li>✦ Prioridad en agenda</li>
+        <li style="margin-bottom: 8px;"><span style="color: var(--primary);">✦</span> 12 clases al mes (3 semanales)</li>
+        <li style="margin-bottom: 8px;"><span style="color: var(--primary);">✦</span> Preparación express para metas cruciales</li>
+        <li style="margin-bottom: 8px;"><span style="color: var(--primary);">✦</span> Inmersión lingüística avanzada</li>
+        <li><span style="color: var(--primary);">✦</span> Prioridad absoluta en asignación de agenda</li>
       </ul>
-      <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid #eee;">
+      <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid #e2e8f0;">
         <div class="price-now">$200.000</div>
-        <span style="font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--text-muted);">CLP / MES</span>
+        <span class="price-currency">CLP / MES</span>
       </div>
     </div>
 
