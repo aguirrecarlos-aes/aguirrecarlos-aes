@@ -3,366 +3,329 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flyer Vertical — Aguirre English Studio</title>
+<title>Aguirre English Studio — Clases de Inglés Personalizadas</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background: #1a1a2e;
+  background: #0f172a;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 15px;
   font-family: 'Outfit', sans-serif;
 }
 
-/* ===== FLYER STORIES (vertical) ===== */
+/* ===== CONTENEDOR PRINCIPAL (Fondo Blanco/Azul/Oro) ===== */
 .flyer {
   width: 100%;
-  max-width: 540px;
-  height: calc(100vh - 40px);
-  max-height: 960px;
-  aspect-ratio: 1080 / 1920;
+  max-width: 480px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   position: relative;
   overflow: hidden;
-  background: #08090E;
-  border-radius: 8px;
-  box-shadow: 0 40px 120px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.04);
-}
-
-/* Background elements */
-.flyer-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 15% 20%, rgba(196, 156, 42, 0.12) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 75%, rgba(30, 80, 160, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(8,9,14,0) 0%, rgba(8,9,14,0.6) 100%);
-}
-
-/* Grid pattern overlay */
-.flyer-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-}
-
-/* Gold diagonal accent */
-.flyer-diagonal {
-  position: absolute;
-  top: 0; right: 0;
-  width: 280px; height: 280px;
-  background: linear-gradient(135deg, transparent 40%, rgba(196,156,42,0.06) 100%);
-}
-
-/* Top bar */
-.flyer-topbar {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #C49C2A, #E8C96B, #C49C2A);
-}
-
-/* Content wrapper */
-.flyer-content {
-  position: relative;
-  z-index: 10;
-  height: 100%;
+  border: 4px solid #002855;
   display: flex;
   flex-direction: column;
-  padding: 40px 36px 36px;
 }
 
-/* HEADER */
-.flyer-header {
+/* ===== HEADER GIRATORIO ANIMADO (Marquesina Infinita) ===== */
+.ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, #C49C2A, #E8C96B, #C49C2A);
+  padding: 6px 0;
+  border-bottom: 2px solid #002855;
+}
+
+.ticker {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}
+
+.ticker-item {
+  display: inline-block;
+  padding: 0 2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #002855;
+  letter-spacing: 2px;
+}
+
+@keyframes marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+
+.content {
+  padding: 24px 24px 30px 24px;
   display: flex;
-  align-items: center; /* Vertical alignment for logo-right badge */
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ===== ENCABEZADO Y LOGO ===== */
+.header {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  border-bottom: 2px solid #F1F5F9;
+  padding-bottom: 16px;
 }
 
 .official-logo {
-  max-height: 80px; /* Reduced logo size to integrate better */
+  max-height: 55px;
   width: auto;
   object-fit: contain;
 }
 
-.header-right {
-  text-align: right;
-}
-.online-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
+.badge {
   font-family: 'DM Mono', monospace;
   font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #C49C2A;
-  border: 1px solid rgba(196,156,42,0.3);
-  padding: 4px 10px;
-  border-radius: 2px;
-  background: rgba(196,156,42,0.06);
-}
-.online-badge::before {
-  content: '';
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: #C49C2A;
-  animation: blink 2s infinite;
-}
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
-/* HERO TEXT */
-.flyer-hero {
-  margin-bottom: 20px;
+  font-weight: 600;
+  color: #002855;
+  background: #E0F2FE;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #BAE6FD;
 }
 
-.flyer-eyebrow {
-  font-family: 'DM Mono', monospace;
-  font-size: 9.5px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  margin-bottom: 8px;
+/* ===== SECCIÓN HERO ===== */
+.hero {
+  text-align: center;
+  padding: 4px 0;
 }
 
-.flyer-headline {
+.hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 46px;
+  font-size: 34px;
   font-weight: 900;
-  line-height: 1.05;
-  color: #F5F0E8;
-  margin-bottom: 4px;
-}
-.flyer-headline .gold { color: #C49C2A; }
-.flyer-headline .italic { font-style: italic; }
-
-.flyer-subline {
-  font-size: 13px;
-  color: rgba(245,240,232,0.5);
-  font-weight: 300;
-  line-height: 1.5;
-  margin-top: 10px;
+  color: #002855;
+  line-height: 1.15;
+  margin-bottom: 12px;
 }
 
-/* DIVIDER */
-.divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(196,156,42,0.3), transparent);
-  margin: 16px 0;
+.hero h1 span {
+  color: #C49C2A;
+  font-style: italic;
 }
 
-/* NICHES */
-.niches {
+.hero p {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* ===== ENFOQUES DE APRENDIZAJE ===== */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: #002855;
+  border-left: 4px solid #C49C2A;
+  padding-left: 8px;
+  margin-bottom: 12px;
+}
+
+.grid-enfoques {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.card-enfoque {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 12px;
   display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+  flex-direction: column;
+  gap: 4px;
 }
-.niche-tag {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+
+.card-enfoque .icon {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.card-enfoque h3 {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #002855;
+}
+
+.card-enfoque p {
   font-size: 11px;
-  font-weight: 500;
-  color: rgba(245,240,232,0.65);
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 4px 10px;
-  border-radius: 2px;
-}
-.niche-tag .icon { font-size: 11px; }
-
-/* PRICING SECTION */
-.pricing-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.25);
-  margin-bottom: 10px;
+  color: #64748B;
+  line-height: 1.4;
 }
 
+/* ===== ESTILO VISUAL DE LOS PLANES REQUERIDO ===== */
 .plans {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 16px;
 }
 
 .plan {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-  border-radius: 3px;
-  border: 1px solid rgba(255,255,255,0.06);
+  padding: 14px 16px;
+  border-radius: 4px;
+  border: 1px solid #E2E8F0;
   position: relative;
   overflow: hidden;
+  background: #FFFFFF;
 }
 
 .plan-inicio {
-  background: linear-gradient(135deg, rgba(196,156,42,0.12), rgba(196,156,42,0.04));
-  border-color: rgba(196,156,42,0.3);
+  background: #FFFDF5;
+  border-color: rgba(196,156,42,0.4);
 }
 .plan-inicio::before {
   content: 'OFERTA';
   position: absolute;
-  top: 8px; right: -18px;
+  top: 6px; right: -20px;
   background: #C49C2A;
-  color: #08090E;
+  color: #FFFFFF;
   font-family: 'DM Mono', monospace;
   font-size: 7.5px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 1.5px;
-  padding: 1px 24px;
+  padding: 2px 24px;
   transform: rotate(45deg);
   transform-origin: center;
 }
 
-.plan-estandar { background: rgba(255,255,255,0.02); }
-.plan-intensivo { background: rgba(30,80,160,0.06); border-color: rgba(30,80,160,0.2); }
+.plan-estandar { background: #F8FAFC; }
+.plan-intensivo { background: #F0F5FA; border-color: rgba(30,80,160,0.15); }
 
 .plan-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: #F5F0E8;
-  margin-bottom: 2px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #002855;
+  margin-bottom: 3px;
 }
 .plan-detail {
   font-family: 'DM Mono', monospace;
-  font-size: 9.5px;
-  color: rgba(245,240,232,0.4);
-  letter-spacing: 0.5px;
+  font-size: 10px;
+  color: #64748B;
+  letter-spacing: 0.2px;
 }
 .plan-right { text-align: right; }
 .plan-price {
   font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: #F5F0E8;
+  font-size: 21px;
+  font-weight: 900;
+  color: #002855;
   line-height: 1;
 }
 .plan-inicio .plan-price { color: #C49C2A; }
 .plan-currency {
   font-family: 'DM Mono', monospace;
   font-size: 8.5px;
-  color: rgba(245,240,232,0.3);
+  color: #94A3B8;
   letter-spacing: 1px;
+  font-weight: 500;
+  margin-top: 2px;
 }
 
-/* FEATURE LIST */
-.features {
+/* ===== BENEFICIOS ADICIONALES ===== */
+.beneficios-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: 16px;
+  gap: 8px;
+  background: #F8FAFC;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px dashed #CBD5E1;
 }
-.feature {
+
+.beneficio-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 11.5px;
-  color: rgba(245,240,232,0.55);
-}
-.feature::before {
-  content: '✦';
-  color: #C49C2A;
-  font-size: 8px;
-  flex-shrink: 0;
-}
-
-/* CTA */
-.cta-block {
-  margin-top: auto;
-  background: linear-gradient(135deg, #C49C2A 0%, #E8C96B 50%, #C49C2A 100%);
-  border-radius: 3px;
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-}
-.cta-block::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
-}
-.cta-left { position: relative; }
-.cta-action {
-  font-family: 'DM Mono', monospace;
-  font-size: 8.5px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(8,9,14,0.6);
-  margin-bottom: 2px;
-}
-.cta-contact {
-  font-family: 'Playfair Display', serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: #08090E;
-}
-.cta-free {
-  position: relative;
-  text-align: right;
-}
-.cta-free-top {
-  font-family: 'DM Mono', monospace;
-  font-size: 8px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: rgba(8,9,14,0.5);
-}
-.cta-free-bottom {
   font-size: 12px;
-  font-weight: 700;
-  color: #08090E;
+  color: #475569;
+  font-weight: 500;
 }
 
-/* FOOTER */
-.flyer-footer {
+.beneficio-item::before {
+  content: '✓';
+  color: #C49C2A;
+  font-weight: 900;
+}
+
+/* ===== BOTÓN DE WHATSAPP GIGANTE (CTA) ===== */
+.cta-whatsapp {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 14px;
+  gap: 8px;
+  background: #002855;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 10px 15px -3px rgba(0, 40, 85, 0.3);
+  transition: transform 0.2s;
 }
-.footer-handle {
+
+.cta-whatsapp:hover {
+  transform: scale(1.02);
+}
+
+.cta-title {
+  color: #E8C96B;
   font-family: 'DM Mono', monospace;
-  font-size: 9.5px;
-  letter-spacing: 1px;
-  color: rgba(255,255,255,0.25);
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
-.footer-dot {
-  width: 3px; height: 3px;
-  border-radius: 50%;
-  background: rgba(196,156,42,0.4);
+
+.cta-btn-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  width: 100%;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.cta-sub {
+  color: #FFFFFF;
+  font-size: 11px;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+/* ===== PIE DE PÁGINA ===== */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: #94A3B8;
+  border-top: 1px solid #F1F5F9;
+  padding-top: 12px;
+  font-weight: 500;
 }
 
 </style>
 </head>
 <body>
-
-<div class="flyer">
-  <div class="flyer-bg"></div>
-  <div class="flyer-grid"></div>
-  <div class="flyer-diagonal"></div>
-  <div class="flyer-topbar"></div>
-
-  <div class="flyer-content">
-
-    <div class="flyer-header">
-      <img src="https://images.squarespace-cdn.com/content/v1/67657199c0da9836371a7428/d572d4ae-e0a5-48bd-a292-69f8c14856f7/AESLogo-DarkBlue.png" alt="Aguirre English Studio Official Logo" class="official-logo">
-      <div class="header-right">
-        <div class="
