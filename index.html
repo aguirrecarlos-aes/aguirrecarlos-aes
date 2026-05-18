@@ -19,7 +19,7 @@ body {
   font-family: 'Outfit', sans-serif;
 }
 
-/* ===== CONTENEDOR PRINCIPAL (Optimizado para PC y Móvil) ===== */
+/* ===== CONTENEDOR PRINCIPAL ===== */
 .flyer {
   width: 100%;
   max-width: 480px;
@@ -33,7 +33,7 @@ body {
   flex-direction: column;
 }
 
-/* ===== HEADER GIRATORIO ANIMADO (Marquesina Infinita) ===== */
+/* ===== MARQUESINA ===== */
 .ticker-wrap {
   width: 100%;
   overflow: hidden;
@@ -71,7 +71,7 @@ body {
   gap: 24px;
 }
 
-/* ===== ENCABEZADO Y LOGO ===== */
+/* ===== HEADER ===== */
 .header {
   display: flex;
   align-items: center;
@@ -97,7 +97,7 @@ body {
   border: 1px solid #BAE6FD;
 }
 
-/* ===== SECCIÓN HERO ===== */
+/* ===== HERO ===== */
 .hero {
   text-align: center;
   padding: 4px 0;
@@ -123,7 +123,7 @@ body {
   line-height: 1.6;
 }
 
-/* ===== SECCIÓN MICRO-BIO Y INDICADORES DE CONFIANZA ===== */
+/* ===== MICRO-BIO & STATS ===== */
 .bio-card {
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
@@ -170,7 +170,7 @@ body {
   line-height: 1.2;
 }
 
-/* ===== ENFOQUES DE APRENDIZAJE ===== */
+/* ===== ENFOQUES ===== */
 .section-title {
   font-family: 'Playfair Display', serif;
   font-size: 18px;
@@ -214,11 +214,11 @@ body {
   line-height: 1.4;
 }
 
-/* ===== ESTILO VISUAL DE LOS PLANES ===== */
+/* ===== ESTILO DE LOS PLANES (PLAN INICIO RESALTADO) ===== */
 .plans {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px; /* Aumentado para dar aire al plan resaltado */
 }
 
 .plan {
@@ -226,31 +226,50 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px;
-  border-radius: 4px;
+  border-radius: 8px;
   border: 1px solid #E2E8F0;
   position: relative;
   overflow: hidden;
   background: #FFFFFF;
 }
 
+/* --- ESTILO ESPECIAL PLAN INICIO --- */
 .plan-inicio {
   background: #FFFDF5;
-  border-color: rgba(196,156,42,0.4);
+  border: 2px solid #C49C2A;
+  box-shadow: 0 8px 20px -6px rgba(196, 156, 42, 0.3);
+  transform: scale(1.02); /* Lo hace ligeramente más grande */
+  z-index: 10;
 }
+
 .plan-inicio::before {
-  content: 'OFERTA';
+  content: '¡SOLO POR ESTE MES!';
   position: absolute;
-  top: 6px; right: -20px;
-  background: #C49C2A;
+  top: 8px; right: -25px;
+  background: #D94624; /* Rojo suave para urgencia */
   color: #FFFFFF;
   font-family: 'DM Mono', monospace;
-  font-size: 7.5px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  padding: 2px 24px;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 4px 30px;
   transform: rotate(45deg);
-  transform-origin: center;
 }
+
+.old-price {
+  font-size: 12px;
+  color: #94A3B8;
+  text-decoration: line-through;
+  display: block;
+  font-weight: 500;
+}
+
+.new-price {
+  color: #D94624 !important; /* Resalta el nuevo precio en el Plan Inicio */
+  font-size: 24px !important;
+}
+
+/* -------------------------------- */
 
 .plan-estandar { background: #F8FAFC; }
 .plan-intensivo { background: #F0F5FA; border-color: rgba(30,80,160,0.15); }
@@ -275,7 +294,6 @@ body {
   color: #002855;
   line-height: 1;
 }
-.plan-inicio .plan-price { color: #C49C2A; }
 .plan-currency {
   font-family: 'DM Mono', monospace;
   font-size: 8.5px;
@@ -321,7 +339,7 @@ body {
   font-size: 10px;
 }
 
-/* ===== PREGUNTAS FRECUENTES (ACORDEÓN NATIVO) ===== */
+/* ===== FAQs ===== */
 .faq-container {
   display: flex;
   flex-direction: column;
@@ -333,7 +351,6 @@ body {
   border: 1px solid #E2E8F0;
   border-radius: 8px;
   overflow: hidden;
-  transition: all 0.2s ease;
 }
 
 .faq-item[open] {
@@ -348,13 +365,10 @@ body {
   color: #002855;
   cursor: pointer;
   user-select: none;
-  outline: none;
-  list-style: none; /* Remueve flecha nativa en algunos navegadores */
+  list-style: none;
 }
 
-.faq-question::-webkit-details-marker {
-  display: none; /* Remueve flecha nativa en Chrome/Safari */
-}
+.faq-question::-webkit-details-marker { display: none; }
 
 .faq-answer {
   padding: 0 14px 14px 14px;
@@ -363,11 +377,7 @@ body {
   line-height: 1.5;
 }
 
-.faq-answer strong {
-  color: #002855;
-}
-
-/* ===== BENEFICIOS ADICIONALES ===== */
+/* ===== BENEFICIOS ===== */
 .beneficios-list {
   display: flex;
   flex-direction: column;
@@ -393,7 +403,7 @@ body {
   font-weight: 900;
 }
 
-/* ===== BOTÓN DE WHATSAPP INTERACTIVO ===== */
+/* ===== WHATSAPP ===== */
 .cta-whatsapp {
   display: flex;
   flex-direction: column;
@@ -408,9 +418,7 @@ body {
   transition: transform 0.2s;
 }
 
-.cta-whatsapp:hover {
-  transform: scale(1.02);
-}
+.cta-whatsapp:hover { transform: scale(1.02); }
 
 .cta-title {
   color: #E8C96B;
@@ -433,7 +441,6 @@ body {
   font-weight: 700;
   width: 100%;
   justify-content: center;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .cta-sub {
@@ -443,7 +450,6 @@ body {
   margin-top: 2px;
 }
 
-/* ===== PIE DE PÁGINA ===== */
 .footer {
   display: flex;
   justify-content: space-between;
@@ -452,7 +458,6 @@ body {
   color: #94A3B8;
   border-top: 1px solid #F1F5F9;
   padding-top: 12px;
-  font-weight: 500;
 }
 
 </style>
@@ -480,7 +485,6 @@ body {
       <p>Profesor licenciado con clases particulares enfocadas en lo que necesitas para tu desarrollo internacional y laboral.</p>
     </div>
 
-    <!-- SECCIÓN: SOBRE EL TEACHER & CONFIANZA -->
     <div class="bio-card">
       <p class="bio-text">✨ Clases lideradas por <strong>Carlos Aguirre</strong>, Profesor de Inglés Licenciado y Educador con experiencia internacional (Denver, USA). Método enfocado en resultados reales.</p>
       <div class="stats-grid">
@@ -535,7 +539,8 @@ body {
             <div class="plan-detail">4 clases · 1 por semana · 60 min c/u</div>
           </div>
           <div class="plan-right">
-            <div class="plan-price">$80.000</div>
+            <span class="old-price">$80.000</span>
+            <div class="plan-price new-price">$60.000</div>
             <div class="plan-currency">CLP / MES</div>
           </div>
         </div>
@@ -571,7 +576,6 @@ body {
       <div class="beneficio-item">Horarios totalmente flexibles coordinados contigo</div>
     </div>
 
-    <!-- SECCIÓN: TESTIMONIOS ADAPTADOS -->
     <div>
       <div class="section-title">Testimonios Reales</div>
       <div class="testimonials-container">
@@ -589,48 +593,27 @@ body {
             <span class="stars">⭐⭐⭐⭐⭐</span>
           </div>
         </div>
-        <div class="testimonial-card">
-          <p class="testimonial-quote">"Las clases 1 a 1 son otro nivel. Preparé mis entrevistas en inglés para una multinacional tecnológica y quedé en el puesto. Se enfoca directo en tu área de trabajo."</p>
-          <div class="testimonial-meta">
-            <span>— Sebastián R., Ing. de Proyectos (Antofagasta)</span>
-            <span class="stars">⭐⭐⭐⭐⭐</span>
-          </div>
-        </div>
       </div>
     </div>
 
-    <!-- SECCIÓN: PREGUNTAS FRECUENTES (FAQs) -->
     <div>
       <div class="section-title">Preguntas Frecuentes</div>
       <div class="faq-container">
         <details class="faq-item" open>
           <summary class="faq-question">💡 ¿Necesito tener una base o saber algo para empezar?</summary>
           <div class="faq-answer">
-            <p><strong>¡Para nada! No necesitas saber absolutamente nada de inglés para comenzar.</strong> Nuestro enfoque de Inglés General está diseñado de forma amigable para guiarte desde el absoluto cero, respetando tu ritmo y construyendo tu confianza desde la primera sesión.</p>
+            <p><strong>¡Para nada! No necesitas saber absolutamente nada de inglés para comenzar.</strong> Nuestro enfoque de Inglés General está diseñado de forma amigable para guiarte desde el absoluto cero.</p>
           </div>
         </details>
         <details class="faq-item">
           <summary class="faq-question">💳 ¿Cómo se pagan las mensualidades?</summary>
           <div class="faq-answer">
-            <p>Las mensualidades se cancelan de manera anticipada al inicio del ciclo de tus clases mediante <strong>transferencia bancaria electrónica</strong> o <strong>Cuenta RUT</strong>.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-question">⏳ ¿Qué pasa si tengo que cancelar una clase?</summary>
-          <div class="faq-answer">
-            <p>Entendemos que surgen imprevistos. Solo debes avisar con un mínimo de <strong>24 horas de anticipación</strong> y podremos reprogramar la sesión dentro del mes correspondiente.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-question">📚 ¿Necesito comprar libros o guías?</summary>
-          <div class="faq-answer">
-            <p>No, ningún gasto extra. Todo el <strong>material digital, lecturas y herramientas de seguimiento personalizado</strong> están completamente incluidos dentro del valor de tu plan.</p>
+            <p>Mediante <strong>transferencia bancaria electrónica</strong> o <strong>Cuenta RUT</strong> al inicio de tu ciclo mensual.</p>
           </div>
         </details>
       </div>
     </div>
 
-    <!-- BOTÓN ACCIÓN WHATSAPP -->
     <a href="https://wa.me/56995192413?text=Hola%20Carlos,%20me%20interesa%20agendar%20la%20sesi%C3%B3n%20diagn%C3%B3stica%20gratuita%20de%20ingl%C3%A9s." class="cta-whatsapp" target="_blank">
       <span class="cta-title">¿Listo para empezar?</span>
       <div class="cta-btn-box">
@@ -641,7 +624,7 @@ body {
 
     <div class="footer">
       <span>© 2026 Aguirre English Studio</span>
-      <span>Clases 1 a 1 Personalizadas</span>
+      <span>Clases 1 a 1 Profesionales</span>
     </div>
 
   </div>
